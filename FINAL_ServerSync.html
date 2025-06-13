@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor Usage Tracker</title>
+    <link rel="stylesheet" href="design1.css">
+    <link rel="icon" type="image/png" href="https://i.ibb.co/Fk4hd5jg/6329f937-6071-4606-b2d4-d7adb75e0cdb.jpg">
+</head>
+<body>
+
+<header class="page-header">
+    <img src="https://i.ibb.co/Fk4hd5jg/6329f937-6071-4606-b2d4-d7adb75e0cdb.jpg" alt="ServerSync Logo" class="logo">
+    <h1>ServerSync</h1>
+</header>
+
+<div class="filter-container">
+    <div class="filter-group-wrapper">
+        <div class="filter-group">
+            <label for="dateFilter">Filter by Date:</label>
+            <select id="dateFilter" class="select-filter">
+                <option value="">All Dates</option>
+                <option value="0">Today</option>
+                <option value="1">1 Day Ago</option>
+                <option value="2">2 Days Ago</option>
+                <option value="3">3 Days Ago</option>
+                <option value="4">4 Days Ago</option>
+                <option value="5">5 Days Ago</option>
+                <option value="6">6 Days Ago</option>
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label for="statusFilter">Filter by Status:</label>
+            <select id="statusFilter" class="select-filter">
+                <option value="">All Statuses</option>
+                <option value="Fixed">Fixed</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="button-group">
+        <button id="openModal">Log Monitor Usage</button>
+        <button id="adminButton">Admin</button>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>User Information</h2>
+        <form id="usageForm">
+            <label for="username">User Name:</label><br>
+            <input type="text" id="username" required><br>
+
+            <label for="monitorNumber">Monitor Number:</label><br>
+            <input type="text" id="monitorNumber" required><br>
+
+            <label for="date">Date Logged In:</label><br>
+            <input type="date" id="date" required><br>
+
+            <label for="checkIn">Time Check In:</label><br>
+            <input type="time" id="checkIn" required><br>
+
+            <label for="checkOut">Time Check Out:</label><br>
+            <input type="time" id="checkOut" required><br>
+
+            <label for="problems">Problems Encountered:</label><br>
+            <input type="text" id="problems" required>
+
+            <label for="description">Description of Problems:</label><br>
+            <textarea id="description" required></textarea><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div id="adminModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Admin Access</h2>
+        <label for="adminPin">Enter Admin PIN:</label><br>
+        <input type="password" id="adminPin" required><br><br>
+        <button id="adminSubmit">Submit</button>
+    </div>
+</div>
+
+<table id="usageTable">
+    <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Monitor Number</th>
+            <th>Date Logged In</th>
+            <th>Time Check In</th>
+            <th>Time Check Out</th>
+            <th>Problems Encountered</th>
+            <th>Description</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+</body>
+
+    <script src="script1.js"></script>
+
+</html>
